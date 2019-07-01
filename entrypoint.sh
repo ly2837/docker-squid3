@@ -1,1 +1,0 @@
-/usr/sbin/squid3  -N -d 1

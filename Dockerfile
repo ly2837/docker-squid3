@@ -11,4 +11,4 @@ ADD entrypoint.sh ./
 
 EXPOSE 3128
 
-ENTRYPOINT ["bash","./entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/squid3","-N","-d","1"]
