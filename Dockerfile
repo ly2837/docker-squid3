@@ -11,4 +11,4 @@ ADD entrypoint.sh ./
 
 EXPOSE 3128
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["bash","./entrypoint.sh"]
