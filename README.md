@@ -4,7 +4,7 @@ docker build -t docker-squid3 .
 ``` 
 ## 运行 1
 ``` shell
-docker run -d --name docker-squid3 \
+docker run -d --restart=always --name docker-squid3 \
     -p 3128:3128 \
     -v $(pwd)/squid.conf:/etc/squid/squid.conf \
     docker-squid3
@@ -18,7 +18,7 @@ docker exec docker-squid3 tail -f /var/log/squid/access.log
 mkdir /var/log/squid/
 chown proxy:proxy /var/log/squid/
 
-docker run -d --name docker-squid3 \
+docker run -d --restart=always --name docker-squid3 \
     -p 3128:3128 \
     -v $(pwd)/squid.conf:/etc/squid/squid.conf \
     -v /var/log/squid/:/var/log/squid/ \
@@ -51,7 +51,7 @@ htpasswd -b -c $(pwd)/passwd testuser testuser
 htpasswd -b $(pwd)passwd testuser testuser
 ```
 ``` shell
-docker run -d --name docker-squid3 \
+docker run -d --restart=always --name docker-squid3 \
     -p 3128:3128 \
     -v $(pwd)/squid.ncsa_auth.conf:/etc/squid/squid.conf \
     -v $(pwd)/passwd:/etc/squid/passwd \
