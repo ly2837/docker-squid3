@@ -7,7 +7,7 @@ RUN sed s/archive.ubuntu.com/mirrors.aliyun.com/g -i /etc/apt/sources.list \
     && apt update \
     && apt install -y squid3 
 
-ADD entrypoint.sh ./
+#ADD entrypoint.sh ./
 
 EXPOSE 3128
 
